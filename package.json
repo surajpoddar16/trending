@@ -1,8 +1,8 @@
 {
-  "name": "mithoo-backend",
+  "name": "trending-frontend",
   "version": "1.0.0",
   "author": "Suraj Poddar",
-  "description": "Instant messaging backend",
+  "description": "Vote for your favourite topics, get list of most trending topics.",
   "license": "ISC",
   "dependencies": {
     "body-parser": "~1.13.2",
