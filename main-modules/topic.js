@@ -11,7 +11,7 @@ var topics = new topicModel.Topics();
 
 function newTopic(req, res) {
   var topic = topics.insert(new topicModel.Topic(req.body.title, req.body.authorName, req.body.authorImage));
-  
+
   res.send({
     message: 'Topic inserted',
     status: true,
@@ -25,6 +25,7 @@ function getTopicsSorted(req, res) {
 
   var start = req.query.pageNumber * req.query.limit;
   var end = start + req.query.limit;
+  
   res.send({
     message: 'Topics fetched',
     status: true,
