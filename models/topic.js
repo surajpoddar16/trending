@@ -1,7 +1,13 @@
+// Topic.js
+// exports Topic constructor used to create a new Topic
+// exports Topics constructor used to create a list of Topics
+
+
 // export values
 exports.Topic = Topic;
 exports.Topics = Topics;
 
+// Topic constructor creates a new topic
 function Topic(title, authorName, authorImage) {
   this.id = undefined;
   this.title = title;
@@ -12,6 +18,8 @@ function Topic(title, authorName, authorImage) {
   this.authorImage = authorImage;
 }
 
+// Public method to vote on Topic
+// voteValue expects values from VoteEnum
 Topic.prototype.vote = function(voteValue) {
   if (voteValue ==  this.VoteEnum.UP) {
     this.upVotes++;
@@ -20,15 +28,19 @@ Topic.prototype.vote = function(voteValue) {
   }
 }
 
+// Method to assign id to topic when saved in a list of topics using Topics
+// constructor
 Topic.prototype.assignId = function(id) {
   this.id = id;
 }
 
+// Topic vote enum. -1 for downvote and +1 for upvote
 Topic.prototype.VoteEnum = {
   'UP': 1,
   'DOWN': -1
 }
 
+// Topics array constructor extends array.
 function Topics() {
   var arr = [];
   arr.push.apply(arr, arguments);
@@ -38,6 +50,8 @@ function Topics() {
 
 Topics.prototype = new Array;
 
+// This method assignsId to the topic to be inserted and then pushes the topic
+// in topics array
 Topics.prototype.insert = function(topic) {
   topic.assignId(this.length);
   this.push(topic);
