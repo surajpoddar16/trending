@@ -1,4 +1,6 @@
 // Environment Setup
+
+// Used by config module to fetch configuration options for different node environments
 process.env.NODE_CONFIG_DIR = __dirname + '/config';
 
 var applicableEnvs = [

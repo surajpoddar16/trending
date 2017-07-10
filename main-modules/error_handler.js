@@ -1,3 +1,6 @@
+// error_handler.js
+// Handles server errors
+
 function internalServerError(res, error) {
   res.statusCode = 500;
   res.send({
